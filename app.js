@@ -17,12 +17,6 @@ const routes = require('./routes/index')
 onerror(app)
 // 具体参数我们在后面进行解释
 app.use(cors({
-  origin: function (ctx) {
-    if (ctx.url === '/test') {
-      return "*"; // 允许来自所有域名请求
-    }
-    return 'http://localhost:8080'; // 这样就能只允许 http://localhost:8080 这个域名的请求了
-  },
   exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
   maxAge: 5 * 60,
   credentials: true,
@@ -33,7 +27,7 @@ app.use(cors({
 let expires = new Date(new Date().getTime() + 60 * 60 * 1000 * 24)
 let cookie = {
   maxAge: 30 * 60 * 1000, // cookie有效时长
-  domain: 'localhost', // 写cookie所在的域名
+  domain: '10.5.9.84', // 写cookie所在的域名
   expires: expires,
   patth: "/api",
   httpOnly: false, // 是否只用于http请求中获取

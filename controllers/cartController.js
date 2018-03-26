@@ -3,7 +3,7 @@
  * 购物车接口列表
  * @Date: 2018-03-15 14:40:48 
  * @Last Modified by: wangpan
- * @Last Modified time: 2018-03-25 21:05:20
+ * @Last Modified time: 2018-03-26 16:05:53
  */
 require('../public/dateFormat')
 
@@ -40,6 +40,9 @@ const changeProductNum = async (ctx, next) => {
         productNum
     } = ctx.request.body;
     try {
+        let user = await Dumall_users.findOne({
+            userId:userId
+        })
         if (user) {
             for (let index = 0; index < user.cartList.length; index++) {
                 if (user.cartList[index].productId == productId) {
