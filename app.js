@@ -27,7 +27,6 @@ app.use(cors({
 let expires = new Date(new Date().getTime() + 60 * 60 * 1000 * 24)
 let cookie = {
   maxAge: 30 * 60 * 1000, // cookie有效时长
-  domain: '10.5.9.84', // 写cookie所在的域名
   expires: expires,
   patth: "/api",
   httpOnly: false, // 是否只用于http请求中获取
