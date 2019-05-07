@@ -28,7 +28,7 @@ let expires = new Date(new Date().getTime() + 60 * 60 * 1000 * 24)
 let cookie = {
   maxAge: 30 * 60 * 1000, // cookie有效时长
   expires: expires,
-  patth: "/api",
+  path: "/",
   httpOnly: false, // 是否只用于http请求中获取
   overwrite: false // 是否允许重写
 }
