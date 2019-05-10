@@ -5,7 +5,7 @@ const cartsRouter = require('./carts');
 const addressRouter = require('./address');
 const verifySession = require('../public/verifySession')
 
-router.prefix('/api/v1')
+router.prefix('/api/v1') 
 router.use(verifySession)
 // 商品列表
 router.use("/goods", goodsRouter.routes(), goodsRouter.allowedMethods())
